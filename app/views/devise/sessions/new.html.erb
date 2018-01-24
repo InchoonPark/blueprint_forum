@@ -1,0 +1,16 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2 class="form-heading">Log In</h2>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="input-field">
+      <%= f.email_field :email, placeholder: "Email", class: "input" %>
+    </div>
+
+    <div class="input-field">
+      <%= f.password_field :password, placeholder: "Password", class: "input" %>
+    </div>
+    
+    <%= f.submit "Log In", class: "submit-btn" %>
+  <% end %>
+</div>

@@ -65,6 +65,8 @@ GEM
       warden (~> 1.2.3)
     erubi (1.7.0)
     execjs (2.7.0)
+    feathericon-rails (0.9.0)
+      rails (>= 4.0.0)
     ffi (1.9.18)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -85,6 +87,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
+    masonry-rails (0.2.4)
+      railties
     method_source (0.9.0)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
@@ -182,9 +186,11 @@ DEPENDENCIES
   byebug (= 9.0.6)
   coffee-rails (= 4.2.2)
   devise
+  feathericon-rails
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   listen (= 3.0.8)
+  masonry-rails
   pg (= 0.20.0)
   puma (= 3.9.1)
   rails (= 5.1.2)

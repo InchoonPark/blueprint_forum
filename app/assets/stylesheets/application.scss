@@ -1,0 +1,32 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "masonry/basic";
+@import "masonry/centered";
+@import "masonry/fluid";
+@import "masonry/gutters";
+@import "masonry/infinitescroll";
+@import "masonry/right-to-left";
+@import "masonry/transitions";
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+
+@import "forms.scss";
+@import "navbar.scss";
+@import "posts.scss";
+
+* {
+  font-family: 'Rubik', sans-serif;
+}
+textarea {
+  resize: none;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.f-container {
+  margin-top: 100px;
+}

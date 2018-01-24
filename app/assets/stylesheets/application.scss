@@ -8,6 +8,7 @@
 @import "masonry/infinitescroll";
 @import "masonry/right-to-left";
 @import "masonry/transitions";
+@import "feathericon";
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
 @import "forms.scss";
@@ -16,6 +17,9 @@
 
 * {
   font-family: 'Rubik', sans-serif;
+}
+input:focus, button:focus {
+  outline: none;
 }
 textarea {
   resize: none;

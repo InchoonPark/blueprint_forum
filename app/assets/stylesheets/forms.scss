@@ -23,6 +23,31 @@
 .input:focus {
   outline: none;
 }
+.file-input-field {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.file-input-btn {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  border-color: #9D9D9D;
+  border-radius: 50px;
+  background-color: white;
+}
+.file-input-caption {
+  position: absolute;
+  top: 39px;
+  left: -150px;
+  color: #a9a9a9;
+}
+.file-icon {
+  font-size: 30px;
+}
+.preview {
+  margin: 0px auto;
+}
 .submit-btn {
   padding: 16px 24px;
   border: none;

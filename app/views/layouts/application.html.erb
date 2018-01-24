@@ -24,6 +24,7 @@
         <div class="collapse navbar-collapse" id="collapse-menu">
           <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-right f-navbar-nav">
+              <li><a href="#">Profile</a></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             </ul>
           <% else %>

@@ -1,6 +1,14 @@
 <div class="col-md-6 col-md-offset-3">
   <h2 class="form-heading">Create a Post</h2>
   <%= form_for(@post) do |f| %>
+    <div class="file-input-field">
+      <button class="file-input-btn" name="post-file">
+        <p class="file-input-caption">Picture (optional)</p>
+        <i class="fe fe-plus file-icon"></i>
+      </button>
+      <img class="img-responsive preview">
+      <input type="file" name="post-file" style="display:none;">
+    </div>
     <div class="input-field">
       <%= f.text_field :heading, placeholder: "Heading", class: "input" %>
     </div>

@@ -16,6 +16,8 @@
 //= require turbolinks
 //= require_tree .
 //= require masonry/jquery.masonry
+//= require toastr
+
 $(document).on('turbolinks:load', function() {
   $(".input").focusin(function() {
     $(this).parent().addClass("input-field-focus");

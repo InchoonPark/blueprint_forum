@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= flash_messages %>
   </head>
 
   <body>
@@ -24,7 +25,7 @@
         <div class="collapse navbar-collapse" id="collapse-menu">
           <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-right f-navbar-nav">
-              <li><a href="#">Profile</a></li>
+              <li><%= link_to current_user.username, show_user_session_path %></a></li>
               <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
             </ul>
           <% else %>

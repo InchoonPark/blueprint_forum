@@ -5,6 +5,10 @@ class PostsController < ApplicationController
     @posts = Post.order('created_at')
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def edit
     if Post.find(params[:id]).user.id == current_user.id
       @post = Post.find(params[:id])
@@ -42,10 +46,9 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to root_url
+      redirect_to @post
     else
       flash[:error] = "An unexpected error occurred."
-      redirect_to root_url
     end
   end
 
@@ -56,6 +59,6 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:heading)
+      params.require(:post).permit(:photo, :heading, :description)
     end
 end

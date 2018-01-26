@@ -4,6 +4,10 @@
     <%= devise_error_messages! %>
 
     <div class="input-field">
+      <%= f.text_field :username, placeholder: "Username", class: "input" %>
+    </div>
+
+    <div class="input-field">
       <%= f.email_field :email, placeholder: "Email", class: "input" %>
     </div>
 
@@ -14,7 +18,7 @@
     <div class="input-field">
       <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "input" %>
     </div>
-    
+
     <%= f.submit "Sign Up", class: "submit-btn" %>
   <% end %>
 </div>

@@ -2,14 +2,30 @@
   padding: 8px;
 }
 .post {
-  padding: 24px;
-  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,.1) !important;
+  border-radius: 4px !important;
   background-color: #f9f9fa;
 }
+.post-photo {
+  width: 100%;
+}
+.post-content {
+  padding: 24px;
+}
 .post-heading {
+  margin-top: 0px;
   margin-bottom: 10px;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .post-text {
-  font-size: 18px;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }

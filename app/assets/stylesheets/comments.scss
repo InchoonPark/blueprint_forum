@@ -4,3 +4,27 @@
   border-radius: 4px !important;
   margin-bottom: 20px;
 }
+.comment-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+.comment-user-photo {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+}
+.comment-user {
+  margin-left: 10px;
+}
+.comment-username {
+  margin-top: 0px;
+  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.comment-time {
+  margin: 0px;
+  color: #a9a9a9;
+  font-size: 12px;
+}

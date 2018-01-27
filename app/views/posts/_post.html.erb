@@ -1,13 +1,18 @@
-<div class="col-md-4 grid-item">
-  <%= link_to post, :action => 'go', :class => "post-link" do %>
-    <div class="post">
-      <% if post.photo.file? %>
-        <%= image_tag(post.photo.url, :class => "post-photo") %>
-      <% end %>
-      <div class="post-content">
-        <h1 class="post-heading-sm"><%= post.heading %></h1>
-        <p class="post-text-sm"><%= post.description %></p>
+<%= link_to post, :action => 'go', :class => "post-link" do %>
+  <div class="post">
+    <% if post.photo.file? %>
+      <%= image_tag(post.photo.url, :class => "post-photo") %>
+    <% end %>
+    <div class="post-content">
+      <h1 class="post-heading-sm"><%= post.heading %></h1>
+      <p class="post-text-sm"><%= post.description %></p>
+      <div class="post-user-sm">
+        <%= image_tag(post.user.photo.url(:thumbnail), :class => "post-user-photo-sm") %>
+        <div class="post-user-text-sm">
+          <h6 class="post-username-sm"><%= post.user.username %></h6>
+          <p class="post-time-sm"><%= time_ago_in_words(post.created_at) + " ago" %></p>
+        </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>

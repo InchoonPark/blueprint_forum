@@ -1,10 +1,18 @@
 <div class="col-md-6 col-md-offset-3">
   <div class="profile-header">
     <%= image_tag(@user.photo.url(:profile), :class => "profile-photo") %>
-    <h1 class="username-heading"><%= @user.username %></h1>
-    <p class="user-desc-text"><%= @user.description %></p>
+    <div class="profile-text">
+      <h1 class="username-heading"><%= @user.username %></h1>
+      <p class="user-desc">
+        <% if @user.description %>
+          <%= @user.description %>
+        <% else %>
+          User has not written a description yet.
+        <% end %>
+      </p>
+    </div>
   </div>
-  <div id="posts-grid">
-    <%= render @user_posts %>
-  </div>
+  <% if @user.id == current_user.id %>
+    <button class="submit-btn">Edit Profile</button>
+  <% end %>
 </div>

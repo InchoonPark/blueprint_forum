@@ -1,6 +1,3 @@
-.grid-item {
-  padding: 8px;
-}
 .post-link {
   color: black;
 }
@@ -8,32 +5,58 @@
   text-decoration: none;
 }
 .post {
+  display: flex;
+  flex-direction: row;
   border: 1px solid rgba(0,0,0,.1) !important;
   border-radius: 4px !important;
   color: black;
 }
 .post-photo {
-  width: 100%;
+  height: 150px;
+  width: 150px;
 }
 .post-content {
-  padding: 24px;
+  padding: 14px 24px;
 }
 .post-heading-sm {
   margin-top: 0px;
-  margin-bottom: 10px;
-  font-size: 20px;
+  margin-bottom: 7px;
+  font-size: 30px;
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .post-text-sm {
-  font-size: 16px;
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
+}
+.post-user-sm {
+  display: flex;
+  flex-direction: row;
+}
+.post-user-photo-sm {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+}
+.post-user-text-sm {
+  margin-left: 10px;
+}
+.post-username-sm {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.post-time-sm {
+  margin: 0px;
+  font-size: 12px;
+  color: #a9a9a9;
 }
 .post-heading-lg {
   margin-bottom: 15px;
@@ -43,4 +66,26 @@
 .post-text-lg {
   font-size: 20px;
   margin-bottom: 40px;
+}
+.post-user-header {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+.post-user-photo {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+}
+.post-user-text {
+  margin-left: 20px;
+}
+.post-username {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: bold;
+}
+.post-time {
+  color: #a9a9a9;
 }

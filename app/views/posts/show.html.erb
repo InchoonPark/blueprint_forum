@@ -1,6 +1,10 @@
 <div class="col-md-6 col-md-offset-3">
-  <div class="user-header">
-    <%= image_tag(@post.user.photo.url(:medium)) %>
+  <div class="post-user-header">
+    <%= image_tag(@post.user.photo.url(:medium), :class => "post-user-photo") %>
+    <div class="post-user-text">
+      <h1 class="post-username"><%= @post.user.username %></h1>
+      <p class="post-time"><%= time_ago_in_words(@post.created_at) + " ago" %></p>
+    </div>
   </div>
   <h1 class="post-heading-lg"><%= @post.heading %></h1>
   <p class="post-text-lg"><%= @post.description %></p>

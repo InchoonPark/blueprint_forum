@@ -1,9 +1,4 @@
 $(document).on('turbolinks:load', function() {
-  $('#posts-grid').masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true
-  });
-
   $(".file-input-btn").click(function() {
     event.preventDefault();
     $('input[name="post[photo]"]').click();

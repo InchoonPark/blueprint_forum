@@ -1,5 +1,25 @@
-.user-photo {
+.profile-header {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+.profile-photo {
   height: 100px;
   width: 100px;
   border-radius: 50px;
+}
+.profile-text {
+  margin-left: 20px;
+}
+.username-heading {
+  margin-top: 5px;
+  font-weight: bold;
+}
+.user-desc {
+  color: #a9a9a9;
+}
+.profile-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

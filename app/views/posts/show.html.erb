@@ -1,5 +1,14 @@
 <div class="col-md-6 col-md-offset-3">
-  <h1><%= @post.user.id %></h1>
-  <h1 class="post-heading"><%= @post.heading %></h1>
-  <p class="post-text"><%= @post.description %></p>
+  <div class="user-header">
+    <%= image_tag(@post.user.photo.url(:medium)) %>
+  </div>
+  <h1 class="post-heading-lg"><%= @post.heading %></h1>
+  <p class="post-text-lg"><%= @post.description %></p>
+  <%= form_for @comment, :html => {:multipart => true} do |f| %>
+    <div class="input-field">
+      <%= f.text_field :description, placeholder: "Write a comment...", class: "input"  %>
+    </div>
+    <%= f.hidden_field :post_id, :value => @post.id %>
+  <% end %>
+  <%= render @comments %>
 </div>

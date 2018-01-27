@@ -4,7 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
   attr_accessor :login
+
+  has_attached_file :photo, styles: { profile: "100x100>", medium: "60x60>", thumbnail: "36x36>" }, :default_url => ":style/default.jpg"
+  validates_attachment_content_type :photo, content_type: /\Aimage/
 
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true

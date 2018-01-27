@@ -6,10 +6,10 @@ $(document).on('turbolinks:load', function() {
 
   $(".file-input-btn").click(function() {
     event.preventDefault();
-    $("input[name=post-file]").click();
+    $('input[name="post[photo]"]').click();
   });
 
-  $("input[name=post-file]").change(function(event){
+  $('input[name="post[photo]"]').change(function(event){
     var file = event.currentTarget.files[0];
     var reader = new FileReader();
     var preview = $(".preview");

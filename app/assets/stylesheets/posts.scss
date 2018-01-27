@@ -1,10 +1,16 @@
 .grid-item {
   padding: 8px;
 }
+.post-link {
+  color: black;
+}
+.post-link:hover {
+  text-decoration: none;
+}
 .post {
   border: 1px solid rgba(0,0,0,.1) !important;
   border-radius: 4px !important;
-  background-color: #f9f9fa;
+  color: black;
 }
 .post-photo {
   width: 100%;
@@ -12,7 +18,7 @@
 .post-content {
   padding: 24px;
 }
-.post-heading {
+.post-heading-sm {
   margin-top: 0px;
   margin-bottom: 10px;
   font-size: 20px;
@@ -21,11 +27,20 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.post-text {
+.post-text-sm {
   font-size: 16px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+.post-heading-lg {
+  margin-bottom: 15px;
+  font-size: 42px;
+  font-weight: bold;
+}
+.post-text-lg {
+  font-size: 20px;
+  margin-bottom: 40px;
 }

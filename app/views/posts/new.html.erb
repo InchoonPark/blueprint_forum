@@ -2,12 +2,12 @@
   <h2 class="form-heading">Create a Post</h2>
   <%= form_for @post, :html => {:multipart => true} do |f| %>
     <div class="file-input-field">
-      <button class="file-input-btn" name="post-file">
+      <button class="file-input-btn">
         <p class="file-input-caption">Picture (optional)</p>
         <i class="fe fe-plus file-icon"></i>
       </button>
       <img class="img-responsive preview">
-      <%= f.file_field :photo, name: "post-file"%>
+      <%= f.file_field :photo, style: "display: none;" %>
     </div>
     <div class="input-field">
       <%= f.text_field :heading, placeholder: "Heading", class: "input" %>

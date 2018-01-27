@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, :except => [:index]
+  before_action :authenticate_user!, :except => [:index, :show]
 
   def index
     @posts = Post.order('created_at')
@@ -7,6 +7,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: params[:id])
+    @comment = Comment.new
   end
 
   def edit
@@ -59,6 +61,6 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:photo, :heading, :description)
+      params.require(:post).permit(:heading, :description, :photo)
     end
 end

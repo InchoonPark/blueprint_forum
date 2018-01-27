@@ -1,10 +1,13 @@
 <div class="col-md-4 grid-item">
-  <div class="post">
-    <img src="https://image.slidesharecdn.com/whentouserubyonrails2009-04-18-090418042426-phpapp01/95/when-to-use-ruby-on-rails-22-728.jpg?cb=1240029033"
-    class="post-photo"/>
-    <div class="post-content">
-      <h1 class="post-heading"><%= post.heading %></h1>
-      <p class="post-text"><%= post.description %></p>
+  <%= link_to post, :action => 'go', :class => "post-link" do %>
+    <div class="post">
+      <% if post.photo.file? %>
+        <%= image_tag(post.photo.url, :class => "post-photo") %>
+      <% end %>
+      <div class="post-content">
+        <h1 class="post-heading-sm"><%= post.heading %></h1>
+        <p class="post-text-sm"><%= post.description %></p>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>

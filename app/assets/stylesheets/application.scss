@@ -12,9 +12,11 @@
 @import "toastr";
 @import url('https://fonts.googleapis.com/css?family=Rubik');
 
+@import "comments.scss";
 @import "forms.scss";
 @import "navbar.scss";
 @import "posts.scss";
+@import "users.scss";
 
 * {
   font-family: 'Rubik', sans-serif;

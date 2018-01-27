@@ -1,18 +1,34 @@
-<%= link_to post, :action => 'go', :class => "post-link" do %>
-  <div class="post">
-    <% if post.photo.file? %>
-      <%= image_tag(post.photo.url, :class => "post-photo") %>
+<div class="post">
+  <% if post.photo.file? %>
+    <%= link_to post, :action => 'go' do %>
+      <%= image_tag(post.photo.url(:thumbnail), :class => "post-photo-sm") %>
     <% end %>
-    <div class="post-content">
+  <% end %>
+  <div class="post-content">
+    <%= link_to post, :action => 'go' do %>
       <h1 class="post-heading-sm"><%= post.heading %></h1>
       <p class="post-text-sm"><%= post.description %></p>
-      <div class="post-user-sm">
-        <%= image_tag(post.user.photo.url(:thumbnail), :class => "post-user-photo-sm") %>
-        <div class="post-user-text-sm">
-          <h6 class="post-username-sm"><%= post.user.username %></h6>
-          <p class="post-time-sm"><%= time_ago_in_words(post.created_at) + " ago" %></p>
+    <% end %>
+    <div class="post-footer-sm">
+      <%= link_to post.user, :type => "get" do %>
+        <div class="post-footer-container-sm">
+          <%= image_tag(post.user.photo.url(:thumbnail), :class => "post-user-photo-sm") %>
+          <div class="post-user-text-sm">
+            <h6 class="post-username-sm"><%= post.user.username %></h6>
+            <p class="post-time-sm"><%= time_ago_in_words(post.created_at) + " ago" %></p>
+          </div>
         </div>
-      </div>
+      <% end %>
+      <% if current_user && post.user_id == current_user.id %>
+        <div class="post-footer-container-sm">
+          <%= link_to edit_post_path(post), :type => "get", :class => "post-footer-btn-sm" do %>
+            <i data-feather="edit" style="height: 18px; color: #7B8CDE"></i>
+          <% end %>
+          <%= link_to post, data: {:confirm => 'Are you sure?'}, :method => :delete, :class => "post-footer-btn-sm" do %>
+            <i data-feather="x" style="height: 18px; color: #e74c3c;"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
-<% end %>
+</div>

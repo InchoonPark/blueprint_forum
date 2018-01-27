@@ -15,20 +15,16 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-//= require masonry/jquery.masonry
 //= require toastr
 
 $(document).on('turbolinks:load', function() {
+  feather.replace();
+
   $(".input").focusin(function() {
     $(this).parent().addClass("input-field-focus");
   });
 
   $(".input").focusout(function() {
     $(this).parent().removeClass("input-field-focus");
-  });
-
-  $('#posts-grid').masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true
   });
 });

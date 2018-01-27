@@ -2,18 +2,14 @@
   <h2 class="form-heading">Edit User Profile</h2>
   <%= form_for @user, :html => {:multipart => true} do |f| %>
     <div class="file-input-field">
-      <button class="file-input-btn" name="user-file">
-        <p class="file-input-caption">Picture (optional)</p>
-        <i class="fe fe-plus file-icon"></i>
-      </button>
-      <img class="img-responsive preview">
+      <%= image_tag(@user.photo.url(:profile), :class => "user-preview-photo") %>
       <%= f.file_field :photo, style: "display: none;"%>
     </div>
     <div class="input-field">
       <%= f.text_field :username, placeholder: "Username", class: "input" %>
     </div>
     <div class="input-field">
-      <%= f.text_field :email, placeholder: "Email", class: "input" %>
+      <%= f.text_field :description, placeholder: "Description", class: "input" %>
     </div>
     <%= f.submit "Update", class: "btn submit-btn" %>
   <% end %>

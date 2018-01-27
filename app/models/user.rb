@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   attr_accessor :login
 
-  has_attached_file :photo, styles: { profile: "100x100>", medium: "60x60>", thumbnail: "36x36>" }, :default_url => ":style/default.jpg"
+  has_attached_file :photo, styles: { profile: "100x100#", medium: "60x60#", thumbnail: "36x36#" }, :default_url => ":style/default.jpg"
   validates_attachment_content_type :photo, content_type: /\Aimage/
 
   validates :username, presence: :true, uniqueness: { case_sensitive: false }

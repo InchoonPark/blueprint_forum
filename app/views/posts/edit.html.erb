@@ -1,0 +1,22 @@
+<div class="col-md-6 col-md-offset-3">
+  <h2 class="form-heading">Edit Post</h2>
+  <%= form_for @post, :html => {:multipart => true} do |f| %>
+    <div class="file-input-field">
+      <button class="file-input-btn" name="user-file">
+        <p class="file-input-caption">Picture (optional)</p>
+        <i class="fe fe-plus file-icon"></i>
+      </button>
+      <% if @post.photo.file? %>
+        <%= image_tag(@post.photo.url, :class => "img-responsive preview") %>
+      <% end %>
+      <%= f.file_field :photo, style: "display: none;"%>
+    </div>
+    <div class="input-field">
+      <%= f.text_field :heading, placeholder: "Heading", class: "input" %>
+    </div>
+    <div class="input-field">
+      <%= f.text_area :description, placeholder: "Description (optional)", rows: 5, class: "input" %>
+    </div>
+    <%= f.submit "Update", class: "btn submit-btn" %>
+  <% end %>
+</div>

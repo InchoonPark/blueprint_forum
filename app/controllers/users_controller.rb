@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
     if @user.id == current_user.id
       if @user.update_attributes(user_params)
-        redirect_to root_url
+        redirect_to @user
       else
         flash[:error] = "An unexpected error occurred."
         redirect_to root_url
@@ -30,6 +30,6 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:username, :photo)
+      params.require(:user).permit(:username, :description, :photo)
     end
 end

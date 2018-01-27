@@ -13,6 +13,17 @@
     </div>
   </div>
   <% if @user.id == current_user.id %>
-    <button class="submit-btn">Edit Profile</button>
+    <%= button_to "Edit Profile", edit_user_path(@user),
+      :class => "submit-btn", :method => :get %>
+  <% end %>
+</div>
+<div class="col-md-8 col-md-offset-2">
+  <h1 class="user-posts-heading">
+    Posts
+  </h1>
+  <% if @user.posts.exists? %>
+    <%= render @user.posts %>
+  <% else %>
+    <h4 class="user-no-post"><%= @user.username + " has not created any posts yet." %>
   <% end %>
 </div>
